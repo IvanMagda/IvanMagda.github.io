@@ -76,6 +76,13 @@ const common = {
     }],
   },
 
+  plugins: [
+        new webpack.ProvidePlugin({
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+        })
+  ],
+
   postcss: (webpack) => {
     return [
       autoprefixer({
