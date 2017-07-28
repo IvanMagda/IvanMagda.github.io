@@ -78,10 +78,12 @@ const common = {
   },
 
   plugins: [
-        new webpack.ProvidePlugin({
-            'window.jQuery': 'jquery',
-            'window.$': 'jquery',
-        })
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
+      $: "jquery",
+      jQuery: "jquery"
+    })
   ],
 
   postcss: (webpack) => {
