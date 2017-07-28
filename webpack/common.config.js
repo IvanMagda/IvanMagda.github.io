@@ -21,6 +21,8 @@ process.env.BABEL_ENV = TARGET;
 const common = {
   entry: [
     PATHS.app,
+    'jquery', //will load jquery from node_modules
+    './src/index',
   ],
 
   output: {
@@ -79,10 +81,12 @@ const common = {
 
   plugins: [
     new webpack.ProvidePlugin({
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: 'jquery',
+      "window.jQuery": 'jquery',
+      tether: 'tether',
+      Tether: 'tether',
+      'window.Tether': 'tether',
     })
   ],
 
