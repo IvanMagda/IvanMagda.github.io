@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
@@ -7,7 +8,9 @@ module.exports = {
   entry: ['bootstrap-loader/extractStyles'],
 
   output: {
-    publicPath: 'dist/',
+    path: path.join(__dirname, '..', 'public', 'dist'),
+    publicPath: '/',
+    filename: '[name].js'
   },
 
   module: {
