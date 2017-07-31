@@ -4,18 +4,20 @@ import { Route, IndexRoute } from 'react-router'
 import App from './containers/App'
 import Search from './containers/Search'
 import Favorites from './containers/Favorites'
+import Locations from './containers/Locations'
 import Listing from './containers/Listing'
 import ResultsList from './components/ResultsList'
 import PropertyListing from './components/PropertyListing'
 import LastSearch from './components/LastSearch'
-import Locations from './components/Locations'
 import NotFound from './components/NotFound'
+import ErrMessage from './components/ErrMessage'
 
 export const routes = (
   <div>
     <Route path='/' component={App}>
       <IndexRoute component={LastSearch} />
       <Route path='locations' component={Locations} />
+      <Route path='error' component={ErrMessage} />
     </Route>
     <Route path='/search' component={Search}>
       <IndexRoute component={ResultsList} />
